@@ -36,7 +36,7 @@ nav ul li a {
  text-align: center;
  text-decoration: none;
  text-transform: uppercase;
- font-weight: bold;
+ /* font-weight: bold; */
  display: block;
  background-color: var(--a-menu-color);
  color: var(--bg-menu-color);
