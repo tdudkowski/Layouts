@@ -7,9 +7,12 @@ const offer = document.querySelector('div.offer');
 const offer_title = document.querySelector('div.offer>h3');
 const third_section = document.querySelector('section.third');
 const third_section_div = document.querySelector('section.third>div');
-
+const fifth_section = document.querySelector('section.fifth');
+const fifth_sectionspan = document.querySelector('section.fifth > span');
+const fifth_section_div = document.getElementById('centered');
 let i = 1;
 let j = 1;
+
 
 const changeTxt = () => {
  if (ultxt[j - 2]) {
@@ -49,6 +52,8 @@ const pre_shuffle = () => {
  logo_block.classList.add('transparent');
  offer.classList.add('outed', 'transparent');
  third_section_div.classList.add('transparent');
+ // fifth_section.style.filter = 'grayscale(100%)';
+ // fifth_section_div.style.filter = 'drop-shadow(0px 0px 0px rgba(200, 200, 0, .8))';
 }
 
 const scrollSpy = () => {
@@ -59,8 +64,21 @@ const scrollSpy = () => {
  }
  if ((third_section.offsetTop - window.scrollY) < window.innerHeight / 2) {
   third_section_div.classList.remove('transparent');
-  console.log(third_section.offsetTop);
  }
+ if ((fifth_section.offsetTop - window.scrollY) + fifth_section.offsetHeight <= window.innerHeight * 2) {
+  let x = Math.floor((fifth_section.offsetTop - window.scrollY) / 5);
+  // console.log(x);
+  fifth_sectionspan.style.filter = `grayscale(${x}%)`;
+  fifth_section_div.style.top = `${window.scrollY/2 - (window.innerHeight)}px`;
+ } else {
+  fifth_section_div.style.top = '0px'
+ }
+
+ // fifth_section_div.style.position = "absolute";
+ // fifth_section_div.style.top = `${window.scrollY + (window.innerHeight/2)}px`;
+ console.log(fifth_section_div.offsetTop)
+ // fifth_section_div.style.left = '50%';
+ // fifth_section_div.style.transform = "translate(-50%, -50%)";
 }
 window.addEventListener('scroll', scrollSpy);
 

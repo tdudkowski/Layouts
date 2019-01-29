@@ -1,3 +1,7 @@
+:root {
+ --dark-bg-color: #333;
+}
+
 body {
  margin: 0;
  font-family: sans-serif;
@@ -63,6 +67,8 @@ nav ul li a:hover {
 section {
  min-height: calc(50vh);
  border-bottom: 1px solid #000;
+ /* z-index: 50; */
+ position: relative;
 }
 
 section.first {
@@ -104,7 +110,7 @@ section.first div.up ul li {
 
 section.first div.bottom {
  background: #000;
- z-index: 10;
+ z-index: 15;
  background-image: url(img/1.jpg);
  background-size: cover;
  background-repeat: no-repeat;
@@ -142,6 +148,7 @@ section.second {
  position: relative;
  display: flex;
  height: 55vh;
+ z-index: 20;
 }
 
 div.logo_block {
@@ -152,8 +159,6 @@ div.logo_block {
  align-items: center;
 
 }
-
-div.logo_block img {}
 
 div.offer {
  font-family: 'Raleway', sans-serif;
@@ -198,6 +203,7 @@ section.third {
  background-image: url(img/1.jpg);
  background-size: cover;
  background-attachment: fixed;
+ z-index: 20;
 }
 
 section.third>div {
@@ -230,9 +236,52 @@ section.third div .txt button {
  color: #ddd;
 }
 
+section.fourth {
+ background-color: var(--dark-bg-color);
+ z-index: 20;
+}
+
+section.fifth {
+ min-height: calc(100vh - 4rem);
+ z-index: 10;
+
+ /* filter: grayscale(100%); */
+}
+
+section.fifth span {
+ display: block;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ background-color: #fff;
+ background-image: url(https://picsum.photos/900/300?image=981);
+ background-size: cover;
+ filter: grayscale(100%);
+}
+
+section.fifth div {
+ /* position: absolute; */
+ position: fixed;
+ left: 50%;
+ background-color: #eee;
+ border: 2px solid #333;
+ width: 30rem;
+ min-height: 15rem;
+ transform: translate(-50%, -50%);
+ /* filter: grayscale(100%); */
+ /* filter: drop-shadow(0px 0px 0px rgba(200, 200, 0, .8)); */
+
+}
+
+section.sixth {
+ z-index: 20;
+}
+
 footer {
  min-height: 20vh;
- background-color: #333;
+ background-color: var(--dark-bg-color);
+ position: relative;
+ z-index: 20;
 }
 
 footer div:nth-of-type(1) {
@@ -279,4 +328,9 @@ footer div:nth-last-of-type(1) p {
 
 .pale {
  opacity: .5;
+}
+
+#centered {
+ color: black;
+ font-size: 30px;
 }
