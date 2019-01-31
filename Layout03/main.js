@@ -69,7 +69,7 @@ const scrollSpy = () => {
   let x = Math.floor((fifth_section.offsetTop - window.scrollY) / 5);
   // console.log(x);
   fifth_sectionspan.style.filter = `grayscale(${x}%)`;
-  fifth_section_div.style.top = `${window.scrollY/2 - (window.innerHeight)}px`;
+  fifth_section_div.style.top = `${(window.innerHeight /2 - fifth_section_div.clientTop/2)}px`;
  } else {
   fifth_section_div.style.top = '0px'
  }
