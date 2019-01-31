@@ -87,6 +87,52 @@ const init = () => {
  pre_shuffle();
 }
 
+// CAROUSEL
+const prevA = document.querySelector('.carousel-control-prev');
+const nextA = document.querySelector('.carousel-control-next');
+const slideList = document.querySelectorAll('.carousel-item');
+const dots = [...document.querySelectorAll('.carousel-indicators li')];
+let active = 0;
+
+const changeDot = () => {
+ let activeDot = dots.findIndex(dot => dot.classList.contains('active'));
+ dots[activeDot].classList.remove('active');
+ dots[active].classList.add('active');
+ console.log(active);
+}
+
+const shiftSlide = () => {
+
+ slideList.forEach(slide => slide.classList.remove('active'));
+ slideList[active].classList.add('active');
+ changeDot();
+}
+
+const changeSlidePlus = () => {
+ active++
+ if (active == slideList.length) {
+  active = 0;
+ }
+ shiftSlide();
+}
+
+const changeSlideMinus = () => {
+ active--
+ // console.log(active);
+ if (active < 0) {
+  active = slideList.length - 1;
+ }
+ shiftSlide();
+}
+
+
+lightbox.option({
+ 'resizeDuration': 200,
+ 'wrapAround': true
+})
+
 init();
 
+nextA.addEventListener('click', changeSlidePlus)
+prevA.addEventListener('click', changeSlideMinus)
 clikerz.addEventListener('click', sliderFunction);
