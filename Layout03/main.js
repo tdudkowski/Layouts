@@ -1,3 +1,4 @@
+// GETTING ELEMENTS
 const clikerz = document.querySelector('div.up');
 const slider = document.querySelector('div.bottom');
 const ultxt = [...document.querySelectorAll('div.up>ul>li')];
@@ -10,27 +11,26 @@ const third_section_div = document.querySelector('section.third>div');
 const fifth_section = document.querySelector('section.fifth');
 const fifth_sectionspan = document.querySelector('section.fifth > span');
 const fifth_section_div = document.getElementById('centered');
+
+// VARIABLES
 let i = 1;
 let j = 1;
 
-
+// FIRST SECTION CHANCHING TXT
 const changeTxt = () => {
  if (ultxt[j - 2]) {
   ultxt[j - 2].classList.remove('show');
  } else {
   ultxt[ultxt.length - 1].classList.remove('show');
  }
- // if (j == ultxt.length) {
- //  ultxt[ultxt.length].classList.remove('show');
- // }
  ultxt[j - 1].classList.add('show');
- // console.log(j, ultxt.length);
  j++;
  if (j == ultxt.length + 1) {
   j = 1;
  }
 }
 
+// FIRST SECTION SLIDER
 const sliderFunction = () => {
  changeTxt();
  slider.style.backgroundImage = `url(img/${i}.jpg)`;
@@ -39,23 +39,20 @@ const sliderFunction = () => {
  } else {
   offer_title.classList.remove('pale');
  }
- // slider.style.backgroundSize = "150% 150%";
  i++
  if (i == 4) {
   i = 1;
  }
 }
 
+// SECOND SECTION ACTIONS
 const pre_shuffle = () => {
- // logo_block.style.opacity = '.1';
- // offer.style = 'position:absolute; right:-100%;';
  logo_block.classList.add('transparent');
  offer.classList.add('outed', 'transparent');
  third_section_div.classList.add('transparent');
- // fifth_section.style.filter = 'grayscale(100%)';
- // fifth_section_div.style.filter = 'drop-shadow(0px 0px 0px rgba(200, 200, 0, .8))';
 }
 
+// SCROLLSPY RULES ACTIONS OF 2ND, 3RD, AND 5TH SECTIONS
 const scrollSpy = () => {
  if ((second_section.offsetTop - window.scrollY) < window.innerHeight / 1.5) {
   logo_block.classList.remove('transparent');
@@ -73,21 +70,17 @@ const scrollSpy = () => {
  } else {
   fifth_section_div.style.top = '0px'
  }
-
- // fifth_section_div.style.position = "absolute";
- // fifth_section_div.style.top = `${window.scrollY + (window.innerHeight/2)}px`;
- console.log(fifth_section_div.offsetTop)
- // fifth_section_div.style.left = '50%';
- // fifth_section_div.style.transform = "translate(-50%, -50%)";
 }
+
 window.addEventListener('scroll', scrollSpy);
 
+// INIT STARTING ACTIONS OF 1ST, 2ND, AND 3RD SECTIONS
 const init = () => {
  setInterval(sliderFunction, 4000);
  pre_shuffle();
 }
 
-// CAROUSEL
+// CAROUSEL IN EIGHTH
 const prevA = document.querySelector('.carousel-control-prev');
 const nextA = document.querySelector('.carousel-control-next');
 const slideList = document.querySelectorAll('.carousel-item');
@@ -98,18 +91,29 @@ const changeDot = () => {
  let activeDot = dots.findIndex(dot => dot.classList.contains('active'));
  dots[activeDot].classList.remove('active');
  dots[active].classList.add('active');
- console.log(active);
 }
 
 const shiftSlide = () => {
-
  slideList.forEach(slide => slide.classList.remove('active'));
  slideList[active].classList.add('active');
  changeDot();
 }
 
+const dotControl = function () {
+ for (let i = 0; i < dots.length; i++) {
+  dots[i].addEventListener('click', function () {
+   slideList.forEach(slide => slide.classList.remove('active'));
+   slideList[i].classList.add('active');
+   dots.forEach(dot => dot.classList.remove('active'));
+   dots[i].classList.add('active');
+   active = i;
+  })
+ }
+}
+
 const changeSlidePlus = () => {
  active++
+
  if (active == slideList.length) {
   active = 0;
  }
@@ -118,21 +122,23 @@ const changeSlidePlus = () => {
 
 const changeSlideMinus = () => {
  active--
- // console.log(active);
+
  if (active < 0) {
   active = slideList.length - 1;
  }
  shiftSlide();
 }
 
-
 lightbox.option({
  'resizeDuration': 200,
  'wrapAround': true
 })
 
+// INITS
+dotControl();
 init();
 
+// LISTENERS
 nextA.addEventListener('click', changeSlidePlus)
 prevA.addEventListener('click', changeSlideMinus)
 clikerz.addEventListener('click', sliderFunction);
