@@ -9,7 +9,8 @@ const offer_title = document.querySelector('div.offer>h3');
 const third_section = document.querySelector('section.third');
 const third_section_div = document.querySelector('section.third>div');
 const fourth_section = document.querySelector('section.fourth');
-const fourth_section_div = document.querySelector('section.fourth>div');
+// const fourth_section_div = document.querySelector('section.fourth>div');
+const fourth_p = document.querySelector('.fourth div p');
 const fifth_section = document.querySelector('section.fifth');
 const fifth_sectionspan = document.querySelector('section.fifth > span');
 const fifth_section_div = document.getElementById('centered');
@@ -67,7 +68,8 @@ const scrollSpy = () => {
   third_section_div.classList.remove('transparent');
  }
  // 4th
- fourth_section_div.style.top = `${fourth_section.offsetTop - window.scrollY}px`;
+ // fourth_p.style.top = `${fourth_p.offsetTop - window.scrollY}px`;
+ fourth_p.style.top = `${(window.innerHeight / 4)- (fourth_section.offsetTop - window.pageYOffset)}px`;
  // 5th
  if ((fifth_section.offsetTop - window.scrollY) + fifth_section.offsetHeight <= window.innerHeight * 2) {
   let x = Math.floor((fifth_section.offsetTop - window.scrollY) / 5);

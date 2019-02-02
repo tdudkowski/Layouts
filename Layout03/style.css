@@ -238,11 +238,10 @@ section.third div .txt button {
 section.fourth {
  background-color: var(--dark-bg-color);
  z-index: 39;
- overflow: hidden;
  border-radius: 0.0001px
 }
 
-section.fourth div::before {
+/* section.fourth div::before {
  content: '';
  position: absolute;
  top: 0;
@@ -252,25 +251,35 @@ section.fourth div::before {
  background-color: rgba(666, 66, 66, .2);
  filter: blur(3px);
 
-}
+} */
 
 section.fourth::after {}
 
 section.fourth div {
- position: fixed;
- min-height: calc(100vh);
+ position: absolute;
  left: 50%;
- top: 50%;
- transform: translate(-50%, -50%);
- backface-visibility: hidden;
- text-align: center;
+ top: 0;
+ transform: translateX(-50%);
+ /* backface-visibility: hidden; */
+ /* text-align: center; */
  border: 2px solid #ddd;
+ height: 70%;
+ margin: 2rem 0;
+ padding: 0 2rem;
+ min-width: 30rem;
+ background-color: rgba(66, 66, 66, .5);
+ color: #ddd;
+ overflow: hidden;
 }
 
 section.fourth div p {
- color: #ff0;
- padding: 2rem;
+ position: fixed;
+ padding: 1rem;
  font-size: 2rem;
+ left: 50%;
+ transform: translateX(-50%);
+ font-family: Arial, Helvetica, sans-serif;
+ width: 100%;
 }
 
 section.fifth {
