@@ -8,6 +8,8 @@ const offer = document.querySelector('div.offer');
 const offer_title = document.querySelector('div.offer>h3');
 const third_section = document.querySelector('section.third');
 const third_section_div = document.querySelector('section.third>div');
+const fourth_section = document.querySelector('section.fourth');
+const fourth_section_div = document.querySelector('section.fourth>div');
 const fifth_section = document.querySelector('section.fifth');
 const fifth_sectionspan = document.querySelector('section.fifth > span');
 const fifth_section_div = document.getElementById('centered');
@@ -52,16 +54,21 @@ const pre_shuffle = () => {
  third_section_div.classList.add('transparent');
 }
 
-// SCROLLSPY RULES ACTIONS OF 2ND, 3RD, AND 5TH SECTIONS
+// SCROLLSPY RULES ACTIONS OF 2ND, 3RD, 4TH, AND 5TH SECTIONS
 const scrollSpy = () => {
+ // 2nd
  if ((second_section.offsetTop - window.scrollY) < window.innerHeight / 1.5) {
   logo_block.classList.remove('transparent');
   offer.classList.add('nonouted');
   offer.classList.remove('transparent');
  }
+ // 3rd
  if ((third_section.offsetTop - window.scrollY) < window.innerHeight / 2) {
   third_section_div.classList.remove('transparent');
  }
+ // 4th
+ fourth_section_div.style.top = `${fourth_section.offsetTop - window.scrollY}px`;
+ // 5th
  if ((fifth_section.offsetTop - window.scrollY) + fifth_section.offsetHeight <= window.innerHeight * 2) {
   let x = Math.floor((fifth_section.offsetTop - window.scrollY) / 5);
   // console.log(x);
