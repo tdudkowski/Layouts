@@ -36,7 +36,9 @@ const changeTxt = () => {
 // FIRST SECTION SLIDER
 const sliderFunction = () => {
  changeTxt();
- slider.style.backgroundImage = `url(img/${i}.jpg)`;
+ const photoList = [48, 54, 64];
+ let x = photoList[i - 1];
+ slider.style.backgroundImage = `url(https://picsum.photos/1000/600?image=10${x})`;
  if (i % 2) {
   offer_title.classList.add('pale');
  } else {

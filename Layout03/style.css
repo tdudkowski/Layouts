@@ -26,7 +26,7 @@ nav {
  top: 0;
  margin: 0 auto;
  width: 100%;
- height: 4rem;
+ /* height: 4rem; */
  z-index: 100;
  background-color: #fff;
  box-shadow: 1px 1px 10px #999;
@@ -317,6 +317,7 @@ section.sixth {
  display: flex;
  justify-items: center;
  background-color: var(--dark-bg-color);
+ height: 500px;
  z-index: 20;
 }
 
@@ -466,12 +467,13 @@ section.seventh div:nth-of-type(4) {
 section.eighth {
  background-color: var(--dark-bg-color);
  z-index: 20;
+ height: 600px
 }
 
 div.carousel {
  position: relative;
  overflow: hidden;
- height: 250px;
+ height: 600px;
 }
 
 ol.carousel-indicators {
@@ -494,17 +496,17 @@ ol.carousel-indicators li {
 div.carousel-inner {
  margin: 0;
  padding: 0;
- height: 150px;
- background-color: #33f;
+ height: 500px;
+ background-color: rgba(120, 120, 120, .1);
 }
 
 div.carousel-item {
  position: absolute;
  display: flex;
- margin: 0;
+ margin: 4rem 0;
  padding: 0;
  width: 100%;
- height: 150px;
+ height: 100%;
  left: 100%;
 }
 
@@ -524,7 +526,8 @@ div.carousel-item.active {
  display: block;
  user-select: none;
  cursor: pointer;
- border: 1px solid #fff;
+ border: 2px solid #ddd;
+ background-color: rgba(100, 100, 100, .6);
  top: 50%;
  width: 2rem;
  padding: .5rem;
@@ -538,10 +541,12 @@ div.carousel-item.active {
 }
 
 .carousel-control-prev {
+ border-radius: 0 50% 50% 0;
  left: 0;
 }
 
 .carousel-control-next {
+ border-radius: 50% 0 0 50%;
  right: 0;
 }
 
