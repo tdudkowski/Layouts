@@ -253,8 +253,6 @@ section.fourth {
 
 } */
 
-section.fourth::after {}
-
 section.fourth div {
  position: absolute;
  left: 50%;
