@@ -9,7 +9,7 @@ const links = document.querySelectorAll('section ul li');
 const articles = document.querySelectorAll('main article');
 const linksArray = [...links];
 const artArray = [...articles];
-const picArray = ['45', '65', '73']
+const picArray = ['77', '73', '59']
 let j = 0;
 flag = false;
 
@@ -29,7 +29,7 @@ const init = () => {
  }
  intro.style.display = 'flex';
  counter.textContent = '';
- picture.style.backgroundImage = `url(http://picsum.photos/300/1000?image=1011)`;
+ picture.style.backgroundImage = `url(http://picsum.photos/300/1000?image=1053)`;
  flag = true;
  linksArray.forEach(link => link.addEventListener('click', linkTo));
 }
