@@ -2,125 +2,125 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>Slide-like Presentation Page</title>
- <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slide-like Presentation Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
- <nav><a href="https://tdudkowski.github.io/">to Github Page</a> | <a href="https://tdudkowski.github.io/Layouts/">List
-   of layouts</a></nav>
-
-
- <span class="info">1</span>
- <main>
-  <div class="strip">
-   <ul>
-    <li><a href="#" id="up">^</a></li>
-    <li><a href="#" id="prev">&lt;&lt;</a>&nbsp;--&nbsp;<a href="#" id="next">&gt;&gt;</a></li>
-   </ul>
+  <span class="info">1</span>
+  <main>
+    <div class="strip">
+      <p>Navigation arrows:</p>
+      <ul>
+        <li><a href="#" id="up">^</a></li>
+        <li><a href="#" id="prev">&lt;&lt;</a>&nbsp; &nbsp;<a href="#" id="next">&gt;&gt;</a></li>
+      </ul>
+    </div>
+    <div class="intro">
+      <header>
+        <h2>Title of Intro</h2>
+        <em>simple slide-like presentation page</em>
+      </header>
+      <hr>
+      <section>
+        <p>This is first page of this presentation, at start we have three slides. all content is already loaded.</p>
+        <p>There're three navigation features: 1) links below 2) arrows at the bottom of strip on the left 3) arrow key
+          on the keyboard.</p>
+        <ul class="menu">
+          <li><a href="#art01">Speed 01</a></li>
+          <li><a href="#art02">Web Accessibiity 02</a></li>
+          <li><a href="#art03">RWD 03</a></li>
+        </ul>
+      </section>
+    </div>
+    <!-- // ONE -->
+    <article id="art01">
+      <header>
+        <h2>Speed</h2>
+        <em>subtitle of Speed slide</em>
+      </header>
+      <hr>
+      <section>
+        <div class="width50">
+          <h3>All is loaded</h3>
+          <p>All content of this page is already loaded, pictures, and text. Javascript controls how this content is
+            displayed and what is hidden.</p>
+        </div>
+        <div class="width50">
+          <h3>Not only content of slides</h3>
+          <p>Every slide has its own, specific illustration on the right and this big number in the background in the
+            right top corner.</p>
+        </div>
+        <div class="width100">
+          <h3>Navigation</h3>
+          <p>For slides, now there's only two options for navigation - those arrows in the left bottom corner, and the
+            key arrow on the keyboard.</p>
+        </div>
+      </section>
+    </article>
+    <!-- // TWO -->
+    <article id="art02">
+      <header>
+        <h2>Web Accessibiity</h2>
+        <em>Loaded content is accessible</em>
+      </header>
+      <hr>
+      <section>
+        <div class="width50">
+          <h3>Web Accessibility</h3>
+          <p>This term means ability of any important content to be rendered to any user, irrelevant from any
+            limitations - user and his device alike.</p>
+        </div>
+        <div class="width50">
+          <h3>Loaded content</h3>
+          <p>Because content is here, JS only hides it, without JS this is normal, linear, easy to access page.</p>
+        </div>
+        <div class="width100">
+          <h3>Title of this</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repudiandae illum sit voluptas molestiae
+            similique optio</p>
+        </div>
+      </section>
+    </article>
+    <!-- // THREE -->
+    <article id="art03">
+      <header>
+        <h2>RWD</h2>
+        <em>Accessible layout in all resolutions</em>
+      </header>
+      <hr>
+      <section>
+        <div class="width50">
+          <h3>Mostly done</h3>
+          <p>Without RWD almost always Web Accessibility is not applied. That's why it's not finished.</p>
+        </div>
+        <div class="width50">
+          <h3>Title of this</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repudiandae illum sit voluptas molestiae
+            similique optio</p>
+        </div>
+        <div class="width100">
+          <h3>To-Do</h3>
+          <ul>
+            <li>RWD - some fixes</li>
+            <li>Web Accessibility - test</li>
+          </ul>
+        </div>
+      </section>
+    </article>
+    <aside></aside>
+  </main>
+  <nav><a href="https://tdudkowski.github.io/">to Github Page</a> | <a href="https://tdudkowski.github.io/Layouts/">List
+      of layouts</a></nav>
+  <div class="hidden">
+    <img src="http://picsum.photos/300/1000?image=1045" alt="" srcset="">
+    <img src="http://picsum.photos/300/1000?image=1065" alt="" srcset="">
+    <img src="http://picsum.photos/300/1000?image=1073" alt="" srcset="">
   </div>
-  <div class="intro">
-   <header>
-    <h2>Title of Intro</h2>
-    <em>simple slide-like presentation page</em>
-   </header>
-   <hr>
-   <section>
-    <p>This is first page of this presentation, at start we have three slides. all content is already loaded.</p>
-    <p>There're two navigation features: 1) links below 2) arrows at the bottom of strip on the left.</p>
-    <ul>
-     <li><a href="#">Speed 01</a></li>
-     <li><a href="#">Web Accessibiity 02</a></li>
-     <li><a href="#">RWD 03</a></li>
-    </ul>
-   </section>
-  </div>
-  <!-- // ONE -->
-  <article id="art01">
-   <header>
-    <h2>Speed</h2>
-    <em>subtitle of Speed slide</em>
-   </header>
-   <hr>
-   <section>
-    <div class="width50">
-     <h3>All is loaded</h3>
-     <p>All content of this page is already loaded, pictures, and text. Javascript controls how this content is
-      displayed and what is hidden.</p>
-    </div>
-    <div class="width50">
-     <h3>Not only content of slides</h3>
-     <p>Every slide has its own, specific illustration on the right and this big number in the background in the
-      right top corner.</p>
-    </div>
-    <div class="width100">
-     <h3>Navigation</h3>
-     <p>For slides, now there's only one option for navigation - those arrows in the left bottom corner.</p>
-    </div>
-   </section>
-  </article>
-  <!-- // TWO -->
-  <article id="art02">
-   <header>
-    <h2>Web Accessibiity</h2>
-    <em>Loaded content is accessible</em>
-   </header>
-   <hr>
-   <section>
-    <div class="width50">
-     <h3>Web Accessibility</h3>
-     <p>This term means ability of any important content to be rendered to any user, irrelevant from any
-      limitations - user and his device alike.</p>
-    </div>
-    <div class="width50">
-     <h3>Loaded content</h3>
-     <p>Because content is here, JS only hides it, without JS this is normal, linear, easy to access page.</p>
-    </div>
-    <div class="width100">
-     <h3>Title of this</h3>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repudiandae illum sit voluptas molestiae
-      similique optio</p>
-    </div>
-   </section>
-  </article>
-  <!-- // THREE -->
-  <article id="art03">
-   <header>
-    <h2>RWD</h2>
-    <em>This is To-Do</em>
-   </header>
-   <hr>
-   <section>
-    <div class="width50">
-     <h3>Not ready yet</h3>
-     <p>Without RWD almost always Web Accessibility is not applied. That's why it's not finished.</p>
-    </div>
-    <div class="width50">
-     <h3>Title of this</h3>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repudiandae illum sit voluptas molestiae
-      similique optio</p>
-    </div>
-    <div class="width100">
-     <h3>Other things To-Do</h3>
-     <ul>
-      <li>Links on the Intro page, should be redesigned, probably the best solution is to set them data-keys.</li>
-      <li>Keyboard controls</li>
-      <li>Some inconsistencies to remove</li>
-     </ul>
-    </div>
-   </section>
-  </article>
-  <aside></aside>
- </main>
- <div class="hidden">
-  <img src="http://picsum.photos/300/1000?image=1045" alt="" srcset="">
-  <img src="http://picsum.photos/300/1000?image=1065" alt="" srcset="">
-  <img src="http://picsum.photos/300/1000?image=1073" alt="" srcset="">
- </div>
- <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
