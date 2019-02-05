@@ -83,7 +83,6 @@ const keyChangeSlide = (e) => {
   default:
    console.log(e.keyCode);
  }
- // shiftSlide();
 }
 
 btnprev.addEventListener('click', prevChange);
