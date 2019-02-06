@@ -36,6 +36,18 @@ span.info {
  z-index: 100;
 }
 
+span.subinfo {
+ position: fixed;
+ top: 0;
+ right: 0;
+ font-size: 5rem;
+ margin-top: -1rem;
+ margin-right: -1rem;
+ padding: 0;
+ color: #d66;
+ z-index: 100;
+}
+
 main {
  position: absolute;
  top: 4rem;
@@ -87,7 +99,7 @@ main {
  justify-content: flex-start;
 }
 
-.intro section ul {
+ul.menu {
  list-style-type: none;
  padding-left: 0;
  margin: 0;
@@ -95,7 +107,23 @@ main {
  flex-direction: column;
 }
 
-.intro section ul a {
+ul.menu a {
+ display: block;
+ border: 1px solid #999;
+ border-radius: 5px;
+ padding: 2rem;
+ margin: .5rem;
+}
+
+ul.submenu {
+ list-style-type: none;
+ padding-left: 0;
+ margin: 0;
+ display: flex;
+ flex-direction: column;
+}
+
+ul.submenu a {
  display: block;
  border: 1px solid #999;
  border-radius: 5px;
@@ -165,6 +193,13 @@ p {
   padding: 0;
  }
 
+ span.subinfo {
+  font-size: 7rem;
+  margin-top: -2rem;
+  margin-right: -1rem;
+  padding: 0;
+ }
+
  main {
   flex-direction: row;
   width: 98%;
@@ -210,6 +245,12 @@ p {
   margin-right: -2rem;
  }
 
+ span.subinfo {
+  font-size: 10rem;
+  margin-top: -3rem;
+  margin-right: -1rem;
+ }
+
  main {
   width: 90%;
   left: 50%;
@@ -225,11 +266,6 @@ p {
  .strip {
   flex-basis: 100px;
  }
-
- .strip ul li {
-  /* display: block; */
- }
-
 }
 
 /* MIN WIDTH 1024 */
@@ -239,7 +275,11 @@ p {
   width: 70%;
  }
 
- .intro section ul {
+ ul.menu {
+  flex-direction: row;
+ }
+
+ ul.submenu {
   flex-direction: row;
  }
 
