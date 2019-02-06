@@ -118,7 +118,7 @@ const keyChangeSlide = (e) => {
     nextChange();
   }
   if (e.keyCode == 40) {
-    if (document.querySelector('div.intro').style.display == 'none') {
+    if (document.querySelector('div.intro').style.display == 'none' && document.querySelector('main').dataset.key == 0) {
       submenuGo();
     }
   }
