@@ -24,6 +24,7 @@ flag = false;
 const submenu = document.querySelectorAll('.submenu li');
 const submenuArray = [...submenu];
 
+// go to sublevel
 const submenuGo = function () {
   console.log(this, j);
   window.open(`index${j+1}.html`, '_self');
@@ -33,6 +34,7 @@ for (let i = 0; i < submenuArray.length; i++) {
   submenuArray[i].addEventListener('click', submenuGo);
 }
 
+// init starts default display
 const init = () => {
   if (flag) {
     window.open('index.html', '_self');
@@ -62,6 +64,7 @@ const init = () => {
 
 init();
 
+// schuffles slides inside levels
 const schuffle = () => {
   for (let i = 0; i < artArray.length; i++) {
     artArray[i].style.display = 'none';
@@ -101,13 +104,14 @@ const nextChange = () => {
   schuffle();
 }
 
-// CHANGING SLIDES WHEN KBS IS CLICKED
+// CHANGING SLIDES WHEN KB ARROW IS CLICKED
+// LEFT: 37 UP: 38 RIGHT: 39 DOWN: 40
 const keyChangeSlide = (e) => {
   if (e.keyCode == 37) {
     prevChange();
   }
   if (e.keyCode == 38) {
-    if (document.querySelector('main').dataset.key != 0) {
+    if (document.querySelector('main').dataset.key != 0 || flag == false) {
       if (subcounter) {
         subcounter.textContent = `${subNumber}._`;
       }
