@@ -51,7 +51,7 @@ const init = () => {
     subcounter.textContent = `${subNumber}._`;
   }
   linksArray.forEach(link => link.classList.add('disabled'));
-  picture.style.backgroundImage = `url(http://picsum.photos/300/1000?image=1053)`;
+  picture.style.backgroundImage = `url(https://picsum.photos/300/1000?image=1053)`;
   flag = true;
   for (let i = 0; i < linksArray.length; i++) {
     linksArray[i].addEventListener('click', function () {
@@ -77,7 +77,7 @@ const schuffle = () => {
   if (subcounter) {
     subcounter.textContent = `${subNumber}.${j + 1}`;
   }
-  picture.style.backgroundImage = `url(http://picsum.photos/300/1000?image=10${picArray[j]})`;
+  picture.style.backgroundImage = `url(https://picsum.photos/300/1000?image=10${picArray[j]})`;
 }
 
 const prevChange = () => {
