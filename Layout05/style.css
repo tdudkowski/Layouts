@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dde;
+}
+
+h1 {
+  color: #889;
+}
+
+main ul {
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #99a;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+  display: block;
+}
+
+main ul li div:hover a:hover,
+main ul li div:hover ul li a:hover {
+  color: yellow;
+}
+
+.motto {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #9aa;
+}
+
+main>ul>li>p {
+  margin-left: -1px;
+  padding: .5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer ul li a {
+  display: inline-block;
+}
+
+/* MEDIA QUERY MAX-WIDTH 800PX */
+@media (max-width: 900px) {
+  main>ul>li {
+    border: 1px solid #889;
+    border-radius: 5px;
+    background-color: #667;
+    padding: .4rem;
+    margin: .2rem;
+  }
+
+  a {
+    font-size: 1.3rem;
+  }
+
+  div>a {
+    color: #dd3;
+    margin: .3rem;
+    border-bottom: 1px solid #aaf;
+  }
+
+  div>ul>li>a {
+    margin-left: 1rem;
+    color: #bb4;
+  }
+
+  main>ul>li>p {
+    color: #aab;
+  }
+}
+
+/* MEDIA QUERY 600-900PX */
+
+
+@media (min-width: 601px) and (max-width: 899px) {
+
+  main>ul {
+    flex-direction: row;
+    /* min-width: 95vw; */
+    flex-wrap: wrap;
+  }
+
+  main>ul>li {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #bbc;
+    width: 300px;
+  }
+
+  main>ul>li>p {
+    color: #667;
+  }
+
+}
+
+/* MEDIA QUERY MIN-WIDTH 800PX */
+@media (min-width: 900px) {
+
+  h1 {
+    font-size: 3rem;
+    float: right;
+    margin: 0;
+    padding: 0;
+  }
+
+  div.container {
+    min-height: 100vh;
+    max-width: 1100px;
+    margin-left: 5rem;
+    overflow: hidden;
+  }
+
+  header,
+  footer {
+    text-align: right;
+    z-index: 10;
+  }
+
+  main ul {
+    min-height: 100vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  main>ul>li {
+    flex: 1;
+    align-items: stretch;
+    margin-top: 0;
+    border: none;
+    border-left: 1px #99a dashed;
+    background-color: transparent;
+  }
+
+  main ul li div {
+    margin-top: 4rem;
+    height: 2rem;
+  }
+
+  main ul li div:hover {
+    height: 100vh;
+    margin-top: 0;
+    background-color: #667;
+  }
+
+  main ul li div:hover a {
+    position: relative;
+    top: 4rem;
+  }
+
+  main ul li div:hover ul {
+    position: relative;
+    top: 4rem;
+    display: block;
+    padding-left: .5rem;
+    line-height: 1.6rem;
+  }
+
+  main ul li div:hover+p {
+    display: none;
+  }
+
+  div>a {
+    display: block;
+    padding-left: 1rem;
+    height: 2rem;
+    border-left: 1px #222 dashed;
+    margin-left: -1px;
+  }
+
+  div:hover>a {
+    color: #dde;
+    border-left: none;
+  }
+
+  div>ul {
+    display: none;
+  }
+
+  main>ul>li>p {
+    margin-top: 40vh;
+    border-left: 1px #222 solid;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 2rem;
+    right: 10rem;
+  }
+
+  footer ul {
+    width: 40rem;
+    display: flex;
+  }
+
+  footer ul li {
+    flex: 1;
+    text-align: center;
+  }
+
+
+
+  .motto {
+    position: absolute;
+    width: 80vw;
+    padding-left: 6rem;
+    top: 30%;
+    float: left;
+    font-size: 2.5rem;
+    z-index: -100;
+  }
+
+}
