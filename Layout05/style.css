@@ -1,11 +1,49 @@
+/* COLORS */
+
 body {
-  margin: 0;
-  padding: 0;
   background-color: #dde;
+}
+
+body div.container {
+  background-color: #f7b71d;
+  border-left: 2px dashed #afa939;
 }
 
 h1 {
   color: #889;
+}
+
+h2 {
+  background-color: #447;
+  color: #dde;
+}
+
+a {
+  color: #99a;
+}
+
+main ul li div:hover a:hover,
+main ul li div:hover ul li a:hover {
+  color: yellow;
+}
+
+motto {
+  color: #9aa;
+}
+
+nav {
+  background-color: #bbc;
+}
+
+main {
+  background-color: #fdef96;
+  color: #2b580c;
+}
+
+/* LAYOUT */
+body {
+  margin: 0;
+  padding: 0;
 }
 
 main ul {
@@ -16,20 +54,13 @@ main ul {
 }
 
 a {
-  color: #99a;
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-decoration: none;
   display: block;
 }
 
-main ul li div:hover a:hover,
-main ul li div:hover ul li a:hover {
-  color: yellow;
-}
-
 .motto {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #9aa;
 }
 
 main>ul>li>p {
@@ -79,12 +110,10 @@ footer ul li a {
 
 /* MEDIA QUERY 600-900PX */
 
-
 @media (min-width: 601px) and (max-width: 899px) {
 
   main>ul {
     flex-direction: row;
-    /* min-width: 95vw; */
     flex-wrap: wrap;
   }
 
