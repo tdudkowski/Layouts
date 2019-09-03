@@ -6,12 +6,19 @@ body {
 
 body div.container {
   background-color: #f7b71d;
-  border-left: 2px dashed #afa939;
+  /* border-left: 2px dashed #afa939; */
+}
+
+body div.front main {
+  background-color: #cce;
+  border-left: none;
+
 }
 
 h1 {
   color: #889;
-}
+  font-family: 'Rhodium Libre', serif;
+  }
 
 h2 {
   background-color: #447;
@@ -21,6 +28,8 @@ h2 {
 a {
   color: #99a;
 }
+
+main ul li div:hover {background-color: #667;}
 
 main ul li div:hover a:hover,
 main ul li div:hover ul li a:hover {
@@ -110,7 +119,7 @@ footer ul li a {
 
 /* MEDIA QUERY 600-900PX */
 
-@media (min-width: 601px) and (max-width: 899px) {
+@media (min-width: 601px) and (max-width: 899px), (min-width: 601px) and (max-height:600px){
 
   main>ul {
     flex-direction: row;
@@ -130,35 +139,40 @@ footer ul li a {
 
 }
 
-/* MEDIA QUERY MIN-WIDTH 800PX */
-@media (min-width: 900px) {
-
-  h1 {
-    font-size: 3rem;
-    float: right;
-    margin: 0;
-    padding: 0;
-  }
+/* MEDIA QUERY MIN-WIDTH 900PX */
+@media (min-width: 900px) and (min-height:600px) {
 
   div.container {
     min-height: 100vh;
     max-width: 1100px;
     margin-left: 5rem;
     overflow: hidden;
-  }
+      }
 
-  header,
-  footer {
-    text-align: right;
-    z-index: 10;
-  }
+  header {
+    font-size: 2rem;
+    position: absolute;
+    top:0;
+    right:3rem;
+    margin: 0;
+    padding: 0;
+    }
+
+        header h1
+    {
+      line-height: 6rem;
+   margin-top:0;
+   }
+
 
   main ul {
     min-height: 100vh;
+    /* min-height: 35rem; */
     margin-top: 0;
     margin-bottom: 0;
     flex-direction: row;
     flex-wrap: nowrap;
+    z-index: -20;
   }
 
   main>ul>li {
@@ -168,34 +182,22 @@ footer ul li a {
     border: none;
     border-left: 1px #99a dashed;
     background-color: transparent;
+    z-index: 20;
   }
 
   main ul li div {
     margin-top: 4rem;
-    height: 2rem;
-  }
+    height: 2rem;   
+      }
 
-  main ul li div:hover {
-    height: 100vh;
-    margin-top: 0;
-    background-color: #667;
-  }
+      main>ul>li>p {
+        margin-top: 40vh;
+        border-left: 1px #222 solid;
+      }
 
-  main ul li div:hover a {
-    position: relative;
-    top: 4rem;
-  }
-
-  main ul li div:hover ul {
-    position: relative;
-    top: 4rem;
-    display: block;
-    padding-left: .5rem;
-    line-height: 1.6rem;
-  }
-
-  main ul li div:hover+p {
+  div>ul {
     display: none;
+    z-index: 20;
   }
 
   div>a {
@@ -203,40 +205,8 @@ footer ul li a {
     padding-left: 1rem;
     height: 2rem;
     border-left: 1px #222 dashed;
-    margin-left: -1px;
+    /* margin-left: -1px; */
   }
-
-  div:hover>a {
-    color: #dde;
-    border-left: none;
-  }
-
-  div>ul {
-    display: none;
-  }
-
-  main>ul>li>p {
-    margin-top: 40vh;
-    border-left: 1px #222 solid;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 2rem;
-    right: 10rem;
-  }
-
-  footer ul {
-    width: 40rem;
-    display: flex;
-  }
-
-  footer ul li {
-    flex: 1;
-    text-align: center;
-  }
-
-
 
   .motto {
     position: absolute;
@@ -245,7 +215,64 @@ footer ul li a {
     top: 30%;
     float: left;
     font-size: 2.5rem;
-    z-index: -100;
+    /* z-index: 10; */
+  } 
+
+  header,
+  footer {
+    text-align: right;
+     }
+
+     footer {
+      position: absolute;
+      bottom: 2rem;
+      right: 10rem;
+     /* top:35rem; */
+      z-index:20;
+    }
+  
+    footer ul {
+      width: 40rem;
+      display: flex;
+    }
+  
+    footer ul li {
+      flex: 1;
+      text-align: center;
+    }
+
+  /* HOVER */
+
+  main ul li div:hover {
+    position: relative;
+    height: 100vh;
+    margin-top: 0;
+    margin-left:-2px;
+    z-index: 20;
+   border-right:20px solid #667;
+     }
+
+       main ul li div:hover a {
+    position: relative;
+    top: 4rem;
   }
 
-}
+  main ul li div:hover+p {
+    display: none;
+  }
+
+  main ul li div:hover ul {
+    position: relative;
+    margin-top: 14rem;
+    display: block;
+    padding-left: .5rem;
+    line-height: 1.6rem;
+   
+  }
+
+  div:hover>a {
+    color: #dde;
+    border-left: none;
+  }
+ 
+  }
