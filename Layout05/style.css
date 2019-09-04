@@ -4,11 +4,6 @@ body {
   background-color: #dde;
 }
 
-body div.container {
-  background-color: #f7b71d;
-  /* border-left: 2px dashed #afa939; */
-}
-
 body div.front main {
   background-color: #cce;
   border-left: none;
@@ -18,7 +13,7 @@ body div.front main {
 h1 {
   color: #889;
   font-family: 'Rhodium Libre', serif;
-  }
+}
 
 h2 {
   background-color: #447;
@@ -29,14 +24,16 @@ a {
   color: #99a;
 }
 
-main ul li div:hover {background-color: #667;}
+main ul li div:hover {
+  background-color: #667;
+}
 
 main ul li div:hover a:hover,
 main ul li div:hover ul li a:hover {
   color: yellow;
 }
 
-motto {
+.motto {
   color: #9aa;
 }
 
@@ -47,6 +44,10 @@ nav {
 main {
   background-color: #fdef96;
   color: #2b580c;
+}
+
+main p {
+  color: #334;
 }
 
 /* LAYOUT */
@@ -70,12 +71,15 @@ a {
 
 .motto {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: right;
+  color: #667;
+  margin: 1rem;
 }
 
 main>ul>li>p {
   margin-left: -1px;
   padding: .5rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 footer ul {
@@ -83,12 +87,27 @@ footer ul {
   padding-left: 0;
 }
 
+footer ul li {
+  padding: .3rem 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 footer ul li a {
   display: inline-block;
+  font-size: 1.2rem;
 }
 
 /* MEDIA QUERY MAX-WIDTH 800PX */
 @media (max-width: 900px) {
+  header {
+    background-color: #334;
+    color: #dde;
+  }
+
+  header h1 {
+    margin-left: 1rem;
+  }
+
   main>ul>li {
     border: 1px solid #889;
     border-radius: 5px;
@@ -112,29 +131,60 @@ footer ul li a {
     color: #bb4;
   }
 
-  main>ul>li>p {
-    color: #aab;
-  }
 }
 
 /* MEDIA QUERY 600-900PX */
 
-@media (min-width: 601px) and (max-width: 899px), (min-width: 601px) and (max-height:600px){
+@media (min-width: 601px) and (max-width: 899px),
+(min-width: 601px) and (max-height:600px) {
+
+  header {
+    background-color: #334;
+    color: #dde;
+  }
+
+  header h1 {
+    margin: 0 0 0 1rem;
+  }
 
   main>ul {
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0;
   }
 
   main>ul>li {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(60, 60, 80, 0.3);
     border-radius: 0;
-    background-color: #bbc;
+    /* background-color: #bbc; */
     width: 300px;
+    margin: .5rem;
+    padding: 1rem .5rem;
+    border-width: 1px 0;
+    box-shadow: 1px 1px 2px 0 rgba(60, 60, 80, 0.1);
   }
 
-  main>ul>li>p {
-    color: #667;
+  main ul li ul {
+    margin-top: 1rem;
+    padding-left: .5rem;
+    border-left: 1px solid transparent;
+  }
+
+  main ul li ul:hover {
+    border-left: 1px solid #aab;
+  }
+
+  main>ul>li:hover {
+    box-shadow: 1px 1px 2px 0 rgba(60, 60, 80, 0.4);
+  }
+
+  main ul li div:hover {
+    background-color: transparent;
+  }
+
+  main ul li div:hover a:hover,
+  main ul li div:hover ul li a:hover {
+    color: #770;
   }
 
 }
@@ -147,22 +197,21 @@ footer ul li a {
     max-width: 1100px;
     margin-left: 5rem;
     overflow: hidden;
-      }
+  }
 
   header {
     font-size: 2rem;
     position: absolute;
-    top:0;
-    right:3rem;
+    top: 0;
+    right: 3rem;
     margin: 0;
     padding: 0;
-    }
+  }
 
-        header h1
-    {
-      line-height: 6rem;
-   margin-top:0;
-   }
+  header h1 {
+    line-height: 6rem;
+    margin-top: 0;
+  }
 
 
   main ul {
@@ -187,13 +236,13 @@ footer ul li a {
 
   main ul li div {
     margin-top: 4rem;
-    height: 2rem;   
-      }
+    height: 2rem;
+  }
 
-      main>ul>li>p {
-        margin-top: 40vh;
-        border-left: 1px #222 solid;
-      }
+  main>ul>li>p {
+    margin-top: 40vh;
+    border-left: 1px #222 solid;
+  }
 
   div>ul {
     display: none;
@@ -215,31 +264,30 @@ footer ul li a {
     top: 30%;
     float: left;
     font-size: 2.5rem;
-    /* z-index: 10; */
-  } 
+  }
 
   header,
   footer {
     text-align: right;
-     }
+  }
 
-     footer {
-      position: absolute;
-      bottom: 2rem;
-      right: 10rem;
-     /* top:35rem; */
-      z-index:20;
-    }
-  
-    footer ul {
-      width: 40rem;
-      display: flex;
-    }
-  
-    footer ul li {
-      flex: 1;
-      text-align: center;
-    }
+  footer {
+    position: absolute;
+    bottom: 2rem;
+    right: 10rem;
+    /* top:35rem; */
+    z-index: 20;
+  }
+
+  footer ul {
+    width: 40rem;
+    display: flex;
+  }
+
+  footer ul li {
+    flex: 1;
+    text-align: center;
+  }
 
   /* HOVER */
 
@@ -247,12 +295,12 @@ footer ul li a {
     position: relative;
     height: 100vh;
     margin-top: 0;
-    margin-left:-2px;
+    margin-left: -2px;
     z-index: 20;
-   border-right:20px solid #667;
-     }
+    border-right: 20px solid #667;
+  }
 
-       main ul li div:hover a {
+  main ul li div:hover a {
     position: relative;
     top: 4rem;
   }
@@ -267,12 +315,11 @@ footer ul li a {
     display: block;
     padding-left: .5rem;
     line-height: 1.6rem;
-   
   }
 
   div:hover>a {
     color: #dde;
     border-left: none;
   }
- 
-  }
+
+}
