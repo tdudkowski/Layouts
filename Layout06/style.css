@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+* {
+  /* border: 1px solid red; */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h3 {
+  padding: 1rem;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #dde;
+}
+
+.header_info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 40px;
+  padding: 1rem;
+}
+
+header h1 {
+  text-align: center;
+}
+
+div.mission {
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  position: relative;
+  display: block;
+  text-align: center;
+  /* line-height: 2rem; */
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  outline: none;
+}
+
+nav a i {
+  /* font-size: 40px; */
+  /* max-width: 100%; */
+  padding-right: 2rem;
+}
+
+nav a:hover i {
+  transform: scale(1.5);
+  transition-duration: 0.5s;
+}
+
+nav a:hover {
+  color: #333;
+  transition-duration: 0.5s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60%;
+  height: 100%;
+  padding: 0;
+  margin-left: 20%;
+  border-bottom: none;
+}
+
+header form {
+  max-width: 15rem;
+  margin: 1rem;
+  display: flex;
+  height: 2rem;
+  padding: 0;
+  line-height: 1.5rem;
+}
+
+header form:hover {
+  box-shadow: 0 0 5px #665;
+  transition-duration: 0.5s;
+}
+
+form input.text {
+  flex: 1;
+  border-radius: 3px 0 0 3px;
+}
+
+form input.button {
+  flex-basis: 6rem;
+  background-color: #ffe;
+  border: 1px solid #332;
+  border-radius: 0 3px 3px 0;
+}
+
+input.button:hover {
+  background-color: #ccb;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main article {
+  flex: 1;
+}
+
+footer {
+  flex-basis: 4rem;
+  background-color: #332;
+}
+
+footer nav {
+  margin: 0 auto;
+}
+
+footer a {
+  color: #ffe;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* MIN WIDTH 576 PX */
+
+@media (min-width: 576px) {
+  header {
+    overflow: hidden;
+    /* to not to break layout on hover over last element in middle */
+  }
+
+  nav ul {
+    flex-direction: row;
+    max-width: 100%;
+  }
+
+  nav ul li {
+    flex: 1;
+  }
+
+  nav a {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  nav a:hover::after {
+    border-bottom: 4px solid #665;
+    transition-duration: 0.5s;
+  }
+
+  nav a i {
+    padding-right: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  footer nav {
+    width: 30rem;
+    margin: 2rem auto;
+  }
+}
+
+/* MIN WIDTH 992 PX */
+
+@media (min-width: 992px) {
+  header {
+    flex-direction: row;
+    flex-basis: 8rem;
+  }
+
+  .header_info {
+    flex-basis: 18rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  div.logo {
+    flex-basis: 1.5rem;
+  }
+
+  header h1 {
+    flex-basis: 13rem;
+  }
+
+  div.mission {
+    flex-basis: 100%;
+  }
+
+  header nav {
+    flex: 1;
+  }
+
+  nav a {
+    padding: 1rem 0;
+  }
+
+  nav a::after {
+    width: 60%;
+  }
+
+  nav a i {
+    padding-bottom: 1.5rem;
+  }
+
+  header form {
+    flex-basis: 15rem;
+    max-width: 100%;
+    margin: 1rem;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  main aside {
+    flex-basis: 20rem;
+  }
+}
+
+/* FORM */
+
+.form_contact {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 2rem;
+  border: 1px solid #aaa;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form_contact label {
+  margin: 1rem 0;
+}
+
+.form_contact input {
+  line-height: 1.5rem;
+}
+
+.form_contact input.send {
+  width: 10rem;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
